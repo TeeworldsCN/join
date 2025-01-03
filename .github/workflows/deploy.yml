@@ -39,4 +39,5 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no $REMOTE_USER@$TARGET_HOST "
             tar -xzvf $TARGET_DIRECTORY/join.tar.gz -C $TARGET_DIRECTORY
+            rm $TARGET_DIRECTORY/join.tar.gz
           "
