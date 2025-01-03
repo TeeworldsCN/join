@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>加入中文社区</title>
+    <style>
+      html {
+        background-color: #1e293b;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB",
+          "Microsoft YaHei", 微软雅黑, "Source Han Sans SC", "Noto Sans CJK SC",
+          "WenQuanYi Micro Hei", Heiti, 黑体, sans-serif;
+        color: #cbd5e1;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        width: 100svw;
+        height: 100svh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        margin: 0.1em;
+      }
+      h3 {
+        text-align: center;
+        margin: 0.5em;
+        font-size: 1.5em;
+        color: #ffffff;
+      }
+      i {
+        width: 4em;
+        height: 4em;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        filter: invert(1);
+      }
+      .icon-qq {
+        background-image: url("./icons/qq-brands-solid.svg");
+      }
+      .icon-discord {
+        background-image: url("./icons/discord-brands-solid.svg");
+      }
+      .icon-pd {
+        background-image: url("./icons/pd-brands-solid.svg");
+      }
+      .list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2em;
+        gap: 2em;
+        flex-wrap: wrap;
+        max-width: 100svw;
+      }
+      .link {
+        width: 13em;
+        height: 13em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5em;
+        background-color: #64748b;
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+        transition: all 0.1s ease-in-out;
+      }
+      .link:hover {
+        background-color: rgb(91, 109, 137);
+      }
+      .link:active {
+        background-color: rgb(46, 57, 77);
+      }
+      .link p {
+        margin: 1em;
+      }
+      a {
+        text-decoration: none;
+        color: #cbd5e1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <h1>加入中文社区</h1>
+      <p>欢迎加入 Teeworlds / DDNet 中文社区，参与讨论和分享你的知识。</p>
+      <div class="list">
+        <a class="link" href="https://qm.qq.com/q/U1WdBHWC8S" target="_blank">
+          <h3>QQ群</h3>
+          <i class="icon icon-qq"></i>
+          <p>Teeworlds 中文社区二群</p>
+        </a>
+        <a
+          class="link"
+          href="https://pd.qq.com/s/h52kbyrkr?businessType=9"
+          target="_blank"
+        >
+          <h3>QQ频道</h3>
+          <i class="icon icon-pd"></i>
+          <p>Teeworlds 社区</p>
+        </a>
+        <a class="link" href="https://discord.gg/6d6J6gF7sP" target="_blank">
+          <h3>Discord</h3>
+          <i class="icon icon-discord"></i>
+          <p>Teeworlds 中文社区</p>
+        </a>
+      </div>
+      <h1>海外社区</h1>
+      <p>DDNet 官方社区（英文）</p>
+      <div class="list">
+        <a class="link" href="https://ddnet.org/discord" target="_blank">
+          <h3>Discord</h3>
+          <i class="icon icon-discord"></i>
+          <p>DDNet 官方社区</p>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
