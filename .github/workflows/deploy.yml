@@ -38,5 +38,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           ssh -o StrictHostKeyChecking=no $REMOTE_USER@$TARGET_HOST "
-            tar -xzvf $TARGET_DIRECTORY/build.tar.gz -C $TARGET_DIRECTORY
+            tar -xzvf $TARGET_DIRECTORY/join.tar.gz -C $TARGET_DIRECTORY
           "
