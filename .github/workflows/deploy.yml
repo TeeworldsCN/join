@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Archive Build Folder
-        run: tar -czvf join.tar.gz icons flares imgs favicon.png index.html
+        run: tar -czvf join.tar.gz icons flares imgs pages favicon.png index.html
 
       - name: Copy Files to Remote Server
         env:

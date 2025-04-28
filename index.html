@@ -6,7 +6,10 @@
     <title>加入中文社区</title>
     <link rel="icon" href="favicon.png" type="image/png" />
     <meta property="og:title" content="加入中文社区" />
-    <meta property="og:description" content="欢迎加入 Teeworlds / DDNet 中文社区，参与讨论和分享你的知识" />
+    <meta
+      property="og:description"
+      content="欢迎加入 Teeworlds / DDNet 中文社区，参与讨论和分享你的知识"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://chat.teeworlds.cn/" />
     <meta property="og:image" content="https://chat.teeworlds.cn/favicon.png" />
@@ -318,9 +321,9 @@
   </head>
 
   <body>
-    <img src="flares/b1.png" alt="" class="flare flare-bottom-right">
-    <img src="flares/b3.png" alt="" class="flare flare-top-right">
-    <img src="flares/b2.png" alt="" class="flare flare-top-left">
+    <img src="flares/b1.png" alt="" class="flare flare-bottom-right" />
+    <img src="flares/b3.png" alt="" class="flare flare-top-right" />
+    <img src="flares/b2.png" alt="" class="flare flare-top-left" />
 
     <div class="page">
       <div class="container">
@@ -331,33 +334,25 @@
             <div class="link-title">QQ群</div>
             <i class="icon icon-qq link-icon"></i>
             <div class="link-name">DDNet 社区一群</div>
-            <div class="link-description">
-              中文玩家社区一群，寻找游戏队友，分享游戏技巧
-            </div>
+            <div class="link-description">中文玩家社区一群，寻找游戏队友，分享游戏技巧</div>
           </a>
           <a class="link" href="https://qm.qq.com/q/U1WdBHWC8S" target="_blank">
             <div class="link-title">QQ群</div>
             <i class="icon icon-qq link-icon"></i>
             <div class="link-name">Teeworlds 社区二群</div>
-            <div class="link-description">
-              中文玩家社区二群，寻找游戏队友，分享游戏技巧
-            </div>
+            <div class="link-description">中文玩家社区二群，寻找游戏队友，分享游戏技巧</div>
           </a>
           <a class="link" href="https://pd.qq.com/s/h52kbyrkr?businessType=9" target="_blank">
             <div class="link-title">腾讯频道</div>
             <i class="icon icon-pd link-icon"></i>
             <div class="link-name">Teeworlds 社区</div>
-            <div class="link-description">
-              多功能语音频道，订阅地图与活动更新资讯
-            </div>
+            <div class="link-description">多功能语音频道，订阅地图与活动更新资讯</div>
           </a>
-          <a class="link" id="wechat-button" href="http://weixin.qq.com/r/mp/HhyIkHPEuy7ErTfz90kM">
+          <a class="link" id="wechat-button" href="./pages/wechat.html">
             <div class="link-title">微信公众号</div>
             <i class="icon icon-wechat link-icon"></i>
             <div class="link-name">Teeworlds 豆豆</div>
-            <div class="link-description">
-              提供分数与地图查询工具，跟进地图发布与活动资讯
-            </div>
+            <div class="link-description">提供分数与地图查询工具，跟进地图发布与活动资讯</div>
           </a>
         </div>
         <h1>海外社区</h1>
@@ -367,9 +362,7 @@
             <div class="link-title">Discord</div>
             <i class="icon icon-discord link-icon"></i>
             <div class="link-name">DDNet 官方社区</div>
-            <div class="link-description">
-              地图创作与意见反馈相关，请加入官方社区
-            </div>
+            <div class="link-description">地图创作与意见反馈相关，请加入官方社区</div>
           </a>
         </div>
       </div>
@@ -387,11 +380,6 @@
         const wechatButton = document.getElementById('wechat-button');
         const wechatModal = document.getElementById('wechat-modal');
         const closeButton = document.querySelector('.close');
-
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        );
-
         function showModal() {
           wechatModal.classList.remove('hide');
           wechatModal.classList.add('show');
@@ -402,12 +390,10 @@
           wechatModal.classList.add('hide');
         }
 
-        if (!isMobile) {
-          wechatButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            showModal();
-          });
-        }
+        wechatButton.addEventListener('click', function (e) {
+          e.preventDefault();
+          showModal();
+        });
 
         closeButton.addEventListener('click', function () {
           hideModal();

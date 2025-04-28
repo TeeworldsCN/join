@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>微信公众号 - Teeworlds 豆豆</title>
+    <link rel="icon" href="../favicon.png" type="image/png" />
+    <meta property="og:title" content="微信公众号 - Teeworlds 豆豆" />
+    <meta property="og:description" content="提供分数与地图查询工具，跟进地图发布与活动资讯" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chat.teeworlds.cn/pages/wechat.html" />
+    <meta property="og:image" content="https://chat.teeworlds.cn/favicon.png" />
+    <meta name="theme-color" content="#1e293b" />
+    <style>
+      html {
+        background-color: #1e293b;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑,
+          'Source Han Sans SC', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', Heiti, 黑体, sans-serif;
+        color: #cbd5e1;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .page {
+        width: 100svw;
+        min-height: 100svh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1em 0.25em;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 0.3em;
+        font-size: 2.2em;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        position: relative;
+        padding-bottom: 0.3em;
+      }
+
+      h1::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #3b82f6;
+        border-radius: 3px;
+      }
+
+      .qr-code {
+        max-width: min(480px, calc(100svw - 1em));
+        max-height: 50svh;
+      }
+
+      .back-button {
+        margin-top: 2em;
+        padding: 0.8em 1.5em;
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 0.5em;
+        font-size: 1em;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .back-button:hover {
+        background-color: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <h1>Teeworlds 豆豆</h1>
+        <img class="qr-code" src="../imgs/qrcode_wx.png" alt="WeChat QR Code" />
+        <a href="../index.html" class="back-button">返回主页</a>
+      </div>
+    </div>
+  </body>
+</html>
