@@ -43,18 +43,30 @@
 
       h1 {
         text-align: center;
+        color: #ffffff;
+        margin-bottom: 0.3em;
+        font-size: 2.2em;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        position: relative;
+        padding-bottom: 0.3em;
+      }
+
+      h1::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #3b82f6;
+        border-radius: 3px;
       }
 
       p {
         text-align: center;
         margin: 0.1em;
-      }
-
-      h3 {
-        text-align: center;
-        margin: 0.5em;
-        font-size: 1.5em;
-        color: #ffffff;
+        font-size: 1.1em;
       }
 
       i {
@@ -65,6 +77,11 @@
         background-size: contain;
         background-position: center;
         filter: invert(1);
+        transition: all 0.3s ease;
+      }
+
+      .link:hover i {
+        filter: invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
       }
 
       .icon-qq {
@@ -84,8 +101,8 @@
       }
 
       /* Modal styles */
+
       .modal {
-        display: none;
         position: fixed;
         z-index: 1;
         left: 0;
@@ -94,8 +111,26 @@
         height: 100%;
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
         align-items: center;
         justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: visibility 0s 0.2s, opacity 0.2s ease;
+      }
+
+      .modal.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: visibility 0s, opacity 0.2s ease;
+      }
+
+      .modal.hide {
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0s 0.2s, opacity 0.2s ease;
       }
 
       .modal-content {
@@ -108,6 +143,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        pointer-events: none; /* Make content clickthrough */
+      }
+
+      /* Make specific elements inside modal-content clickable */
+      .modal-content img,
+      .modal-content .close {
+        pointer-events: auto;
       }
 
       .close {
@@ -154,23 +196,54 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        border-radius: 0.5em;
-        background-color: #64748b;
-        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
-        transition: all 0.1s ease-in-out;
+        justify-content: flex-start;
+        border-radius: 0.8em;
+        background-color: #475569;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: all 0.2s ease-in-out;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+        padding: 1em 0.5em;
       }
 
       .link:hover {
-        background-color: rgb(91, 109, 137);
+        background-color: #3b82f6;
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        border-color: #60a5fa;
       }
 
       .link:active {
-        background-color: rgb(46, 57, 77);
+        background-color: #2563eb;
+        transform: translateY(0);
       }
 
-      .link p {
-        margin: 1em;
+      .link-title {
+        font-size: 1.5em;
+        color: #ffffff;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .link-icon {
+        margin: 0.5em 0;
+      }
+
+      .link-name {
+        margin: 0.5em 0;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      .link-description {
+        text-align: center;
+        margin-top: 0.5em;
+        font-size: 0.9em;
+        line-height: 1.4;
+        color: #e2e8f0;
+        max-width: 100%;
+        padding: 0 0.5em;
       }
 
       a {
@@ -187,33 +260,48 @@
         <p>欢迎加入 Teeworlds / DDNet 中文社区，参与讨论和分享你的知识</p>
         <div class="list">
           <a class="link" href="https://qm.qq.com/q/b10xLMNRZK" target="_blank">
-            <h3>QQ群</h3>
-            <i class="icon icon-qq"></i>
-            <p>DDNet 社区一群</p>
+            <div class="link-title">QQ群</div>
+            <i class="icon icon-qq link-icon"></i>
+            <div class="link-name">DDNet 社区一群</div>
+            <div class="link-description">
+              中文玩家社区一群，寻找游戏队友，分享游戏技巧
+            </div>
           </a>
           <a class="link" href="https://qm.qq.com/q/U1WdBHWC8S" target="_blank">
-            <h3>QQ群</h3>
-            <i class="icon icon-qq"></i>
-            <p>Teeworlds 社区二群</p>
+            <div class="link-title">QQ群</div>
+            <i class="icon icon-qq link-icon"></i>
+            <div class="link-name">Teeworlds 社区二群</div>
+            <div class="link-description">
+              中文玩家社区二群，寻找游戏队友，分享游戏技巧
+            </div>
           </a>
           <a class="link" href="https://pd.qq.com/s/h52kbyrkr?businessType=9" target="_blank">
-            <h3>腾讯频道</h3>
-            <i class="icon icon-pd"></i>
-            <p>Teeworlds 社区</p>
+            <div class="link-title">腾讯频道</div>
+            <i class="icon icon-pd link-icon"></i>
+            <div class="link-name">Teeworlds 社区</div>
+            <div class="link-description">
+              多功能语音频道，订阅地图与活动更新资讯
+            </div>
           </a>
           <a class="link" id="wechat-button" href="http://weixin.qq.com/r/mp/HhyIkHPEuy7ErTfz90kM">
-            <h3>微信公众号</h3>
-            <i class="icon icon-wechat"></i>
-            <p>Teeworlds 豆豆</p>
+            <div class="link-title">微信公众号</div>
+            <i class="icon icon-wechat link-icon"></i>
+            <div class="link-name">Teeworlds 豆豆</div>
+            <div class="link-description">
+              提供分数与地图查询工具，跟进地图发布与活动资讯
+            </div>
           </a>
         </div>
         <h1>海外社区</h1>
         <p>DDNet 官方社区（英文）</p>
         <div class="list">
           <a class="link" href="https://ddnet.org/discord" target="_blank">
-            <h3>Discord</h3>
-            <i class="icon icon-discord"></i>
-            <p>DDNet 官方社区</p>
+            <div class="link-title">Discord</div>
+            <i class="icon icon-discord link-icon"></i>
+            <div class="link-name">DDNet 官方社区</div>
+            <div class="link-description">
+              地图创作与意见反馈相关，请加入官方社区
+            </div>
           </a>
         </div>
       </div>
@@ -238,26 +326,38 @@
           navigator.userAgent
         );
 
+        // Function to show modal with animation
+        function showModal() {
+          wechatModal.classList.remove('hide');
+          wechatModal.classList.add('show');
+        }
+
+        // Function to hide modal with animation
+        function hideModal() {
+          wechatModal.classList.remove('show');
+          wechatModal.classList.add('hide');
+        }
+
         // Only add click event handler if JavaScript is enabled and it's not a mobile device
         if (!isMobile) {
           wechatButton.addEventListener('click', function (e) {
             // Prevent default link behavior on desktop
             e.preventDefault();
-            // Show modal on desktop
-            wechatModal.style.display = 'flex';
+            // Show modal on desktop with animation
+            showModal();
           });
         }
         // On mobile, the default link behavior will work without JavaScript
 
         // Close modal when clicking the close button
         closeButton.addEventListener('click', function () {
-          wechatModal.style.display = 'none';
+          hideModal();
         });
 
         // Close modal when clicking outside the modal content
         window.addEventListener('click', function (event) {
           if (event.target === wechatModal) {
-            wechatModal.style.display = 'none';
+            hideModal();
           }
         });
       });
