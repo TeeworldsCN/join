@@ -23,6 +23,7 @@
         color: #cbd5e1;
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
       }
 
       body {
@@ -34,6 +35,7 @@
         width: 100svw;
         min-height: 100svh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       }
@@ -43,6 +45,7 @@
         height: 100%;
         display: flex;
         justify-content: center;
+        flex-grow: 1;
         align-items: center;
         flex-direction: column;
         padding-top: 1em;
@@ -330,6 +333,33 @@
           top: -20px;
         }
       }
+
+      .footer {
+        width: 100%;
+        text-align: left;
+        font-size: 0.85em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-left: 4em;
+        color: #94a3b8;
+        border-top: 1px solid rgba(148, 163, 184, 0.2);
+      }
+
+      .footer a {
+        color: #60a5fa;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .footer a:hover {
+        color: #93c5fd;
+        text-decoration: underline;
+      }
+
+      .disclaimer {
+        font-style: italic;
+        line-height: 1.5;
+      }
     </style>
   </head>
 
@@ -379,6 +409,11 @@
           </a>
         </div>
       </div>
+      <footer class="footer">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"
+          >冀ICP备2021002466号</a
+        >
+      </footer>
     </div>
 
     <div id="wechat-modal" class="modal">
